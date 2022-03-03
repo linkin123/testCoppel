@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="character"
+            type="com.tp.testcoppel.data.local.CharacterLocal" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:background="@color/black"
+        android:layout_height="wrap_content">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/civ_character"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="10dp"
+            android:layout_marginStart="5dp"
+            android:src="#F5F7FB"
+            app:civ_imageUrl="@{character.resource}"
+            app:civ_circle_background_color="@color/colorGray"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@drawable/ic_launcher_background" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="10dp"
+            tools:text="Captain America (House of M) lorem ipsum un texto de un personaje muy grande que no quepa en la pantalla lorem  ipum  lorem  ipum lorem  ipum lorem  ipum lorem  ipum lorem  ipum lorem  ipum lorem  ipum lorem  ipum lorem  ipum lorem  ipum "
+            android:gravity="center"
+            android:maxLines="5"
+            android:ellipsize="end"
+            android:text="@{character.name}"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/civ_character"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/civ_character"
+            app:layout_constraintTop_toTopOf="@+id/civ_character" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

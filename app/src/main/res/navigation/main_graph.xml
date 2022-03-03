@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_graph"
+    app:startDestination="@id/listCharactersFragment">
+
+    <fragment
+        android:id="@+id/listCharactersFragment"
+        android:name="com.tp.testcoppel.ui.fragments.ListCharactersFragment"
+        android:label="ListCharactersFragment" >
+
+        <action
+            android:id="@+id/action_listCharactersFragment_to_characterDetailFragment"
+            app:destination="@id/characterDetailFragment" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/characterDetailFragment"
+        android:name="com.tp.testcoppel.ui.fragments.CharacterDetailFragment"
+        android:label="CharacterDetailFragment" >
+
+        <argument
+            android:name="idCharacter"
+            android:defaultValue="0"
+            app:argType="integer" />
+
+        <argument
+            android:name="resource"
+            android:defaultValue=""
+            app:argType="string" />
+
+        <argument
+            android:name="description"
+            android:defaultValue=""
+            app:argType="string" />
+
+        <argument
+            android:name="name"
+            android:defaultValue=""
+            app:argType="string" />
+
+    </fragment>
+</navigation>
